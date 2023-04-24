@@ -1,33 +1,51 @@
-import { useState } from 'react'
+import {useEffect, useState} from 'react'
 import reactLogo from './assets/react.svg'
 import './App.css'
+import {ICard} from "./Interfaces/interface";
+import {createDeck} from "./Utils/createDeck";
+import {createLogger} from "vite";
 
 function App() {
-  const [count, setCount] = useState(0)
 
-  return (
-    <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </div>
-  )
+    const [deck, setDeck] = useState<ICard[]>()
+
+    useEffect(() => {
+        if (!deck){
+            let tempDeck = createDeck()
+            setDeck(tempDeck)
+        }
+    },[])
+
+    useEffect(() => console.log(deck),[deck])
+
+    return (
+        <div className={"gameboard-wrapper"}>
+            <div className={"upper-row"}
+                 style={{width: "100%", height: "25%"}}>
+                <div className={"player-field-horizontal"}></div>
+            </div>
+            <div className={"middle-row"}
+                 style={{width: "100%", height: "50%", display: "flex", flexDirection: "row"}}>
+                <div className={"player-field-vertical"} style={{}}></div>
+                <div className={"gameboard"}>
+                    {/*TODO move to CSS, only placeholder here for testing*/}
+                    <div className={"deck-container"}>
+                        <div className={"discard-deck"}>
+discard deck
+                        </div>
+                        <div className={"draw-deck"}>
+                            <img src={"src/assets/card-back.png"} alt={"uno-deck"} className={"uno-draw-deck-img"}/>
+                        </div>
+                    </div>
+                </div>
+                <div className={"player-field-vertical"}></div>
+            </div>
+            <div className={"last-row"}
+                 style={{width: "100%", height: "25%"}}>
+                <div className={"player-field-horizontal"}></div>
+            </div>
+        </div>
+    )
 }
 
 export default App
