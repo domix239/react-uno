@@ -34,7 +34,7 @@ function App() {
 discard deck
                         </div>
                         <div className={"draw-deck"}>
-                            <img src={"src/assets/card-back.png"} alt={"uno-deck"} className={"uno-draw-deck-img"}/>
+                            <img src={"./assets/card-back.png"} alt={"uno-deck"} className={"uno-draw-deck-img"}/>
                         </div>
                     </div>
                 </div>
