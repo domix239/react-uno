@@ -31,10 +31,10 @@ function App() {
                     {/*TODO move to CSS, only placeholder here for testing*/}
                     <div className={"deck-container"}>
                         <div className={"discard-deck"}>
-discard deck
+                            discard deck
                         </div>
                         <div className={"draw-deck"}>
-                            <img src={"./assets/card-back.png"} alt={"uno-deck"} className={"uno-draw-deck-img"}/>
+                            <img src={"card-back.png"} alt={"uno-deck"} className={"uno-draw-deck-img"}/>
                         </div>
                     </div>
                 </div>
