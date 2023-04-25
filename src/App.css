@@ -50,3 +50,9 @@
     height: 100%;
     width: 100%;
 }
+
+.uno-discard-deck-img {
+    height: 100%;
+    width: 100%;
+    opacity: 0.3;
+}

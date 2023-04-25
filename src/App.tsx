@@ -31,7 +31,7 @@ function App() {
                     {/*TODO move to CSS, only placeholder here for testing*/}
                     <div className={"deck-container"}>
                         <div className={"discard-deck"}>
-                            discard deck
+                            <img src={"card-back.png"} alt={"discard-deck"} className={"uno-discard-deck-img"}/>
                         </div>
                         <div className={"draw-deck"}>
                             <img src={"card-back.png"} alt={"uno-deck"} className={"uno-draw-deck-img"}/>
